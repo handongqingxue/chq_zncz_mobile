@@ -1,12 +1,12 @@
 import {withRouter} from "react-router-dom";
 import React, {Component} from 'react'
 import "./index.less";
-import ssdwImg from "../../image/002.png";
-import ryzzImg from "../../image/003.png";
-import gjfxImg from "../../image/004.png";
-import bjsjImg from "../../image/005.png";
-import sjtjImg from "../../image/006.png";
-import dzxjImg from "../../image/007.png";
+import wdphImg from "../../image/002.png";
+import lsphImg from "../../image/003.png";
+import dqphImg from "../../image/004.png";
+import wdddImg from "../../image/005.png";
+import dqddImg from "../../image/006.png";
+import lsddImg from "../../image/007.png";
 import dwpzImg from "../../image/008.png";
 import tcdlImg from "../../image/009.png";
 import $ from 'jquery';
@@ -30,32 +30,32 @@ class Home extends Component{
     render() {
         return(
             <div className="homePage_div">
-                <div className="top_div">辰麒人员定位管理系统</div>
+                <div className="top_div">智能称重管理系统</div>
                 <div className="main_div">
                 <div className="nav_list_div" id="nav_list_div">
-                    <div className="item_div ssdw_div">
-                        <img src={ssdwImg}/>
-                        <div className="text_div">实时定位</div>
+                    <div className="item_div wdph_div" onClick={this.goPage.bind(this,'myNum')}>
+                        <img src={wdphImg}/>
+                        <div className="text_div">我的排号</div>
                     </div>
-                    <div className="item_div ryzz_div">
-                        <img src={ryzzImg}/>
-                        <div className="text_div">人员追踪</div>
+                    <div className="item_div lsph_div">
+                        <img src={lsphImg}/>
+                        <div className="text_div">历史排号</div>
                     </div>
-                    <div className="item_div gjfx_div">
-                        <img src={gjfxImg}/>
-                        <div className="text_div">轨迹分析</div>
+                    <div className="item_div dqph_div">
+                        <img src={dqphImg}/>
+                        <div className="text_div">当前排号</div>
                     </div>
-                    <div className="item_div bjsj_div" onClick={this.goPage.bind(this,'bjInfo')}>
-                        <img src={bjsjImg}/>
-                        <div className="text_div">报警事件</div>
+                    <div className="item_div wddd_div" onClick={this.goPage.bind(this,'bjInfo')}>
+                        <img src={wdddImg}/>
+                        <div className="text_div">我的订单</div>
                     </div>
-                    <div className="item_div sjtj_div" onClick={this.goPage.bind(this,'dataTj')}>
-                        <img src={sjtjImg}/>
-                        <div className="text_div">数据统计</div>
+                    <div className="item_div dqdd_div" onClick={this.goPage.bind(this,'dataTj')}>
+                        <img src={dqddImg}/>
+                        <div className="text_div">当前订单</div>
                     </div>
-                    <div className="item_div dzxj_div">
-                        <img src={dzxjImg}/>
-                        <div className="text_div">电子巡检</div>
+                    <div className="item_div lsdd_div">
+                        <img src={lsddImg}/>
+                        <div className="text_div">历史订单</div>
                     </div>
                     <div className="item_div dwpz_div" onClick={this.goPage.bind(this,'fixedSet')}>
                         <img src={dwpzImg}/>

@@ -3,6 +3,7 @@ import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
 import App from './App'
 import Login from './pages/login'
 import Home from './pages/home'
+import MyNum from './pages/myNum'
 import BjInfo from './pages/bjInfo'
 import DataTj from './pages/dataTj'
 import FixedSet from './pages/fixedSet'
@@ -23,6 +24,7 @@ export default class Router extends React.Component {
                             <Switch>
                                 <Route path='/login' component={Login}/>
                                 <Route path='/home' component={Home}/>
+                                <Route path='/myNum' component={MyNum}/>
                                 <Route path='/bjInfo' component={BjInfo}/>
                                 <Route path='/dataTj' component={DataTj}/>
                                 <Route path='/fixedSet' component={FixedSet}/>
