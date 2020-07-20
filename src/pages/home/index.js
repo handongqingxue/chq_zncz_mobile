@@ -10,6 +10,7 @@ import lsddImg from "../../image/007.png";
 import dwpzImg from "../../image/008.png";
 import tcdlImg from "../../image/009.png";
 import $ from 'jquery';
+import Super from "../../super";
 
 class Home extends Component{
     state={homeState:[],menuTreeNode:[]}
@@ -17,6 +18,7 @@ class Home extends Component{
     componentDidMount() {
         $("html").css("background-color","#154E6C");
         this.initNavListDiv();
+        this.testCreateZJBG();
     }
     initNavListDiv=()=>{
         let nldw=$("#nav_list_div").css("width");
@@ -25,6 +27,35 @@ class Home extends Component{
     }
     goPage = (value) => {
         this.props.history.push(`/${value}`)
+    }
+    testCreateZJBG=()=>{
+        let data={};
+        data['唯一编码']="107907335436771334";
+        data["结论"]="合格";
+        Super.super({
+            url: `api2/entity/104985599549464/detail/normal/`,
+            method:'post',
+            data: data
+        }).then((res) => {
+            console.log("res==="+JSON.stringify(res));
+        })
+    }
+    testZhiJianBaoGaoList=()=>{
+        Super.super({
+            url:`api2/entity/104985599549464/list/tmpl`,
+            method:'GET',
+        }).then((res) => {
+            console.log(res);
+        })
+    }
+    testDingDanXiangQing=()=>{
+        Super.super({
+            url:`api2/entity/104107815608326/detail/107919071434907656`,
+            method:'GET',
+            //query:query
+        }).then((res) => {
+            console.log("订单详情:"+JSON.stringify(res));
+        })
     }
 
     render() {
