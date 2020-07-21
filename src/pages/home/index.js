@@ -30,10 +30,19 @@ class Home extends Component{
     }
     testCreateZJBG=()=>{
         let data={};
-        data['唯一编码']="107907335436771334";
-        data["结论"]="合格";
+        data['唯一编码']="107928501035606018";
+        //let fieldMap={};
+        //fieldMap["104084201676806"]="编辑中";
+        //data[fieldMap]=fieldMap;
+        data["结论"]="不合格";
+        data["%fuseMode%"]=false;
+        data["货运订单48[1].$$label$$"]="关联订单";
+        data["货运订单48[1].唯一编码"]="337525032";
+        data["货运订单48[1].重量差额比"]=2;
+        data["%fuseMode%"]=false;
+        data["货运订单48.$$flag$$"]=true;
         Super.super({
-            url: `api2/entity/104985599549464/detail/normal/`,
+            url: `api2/entity/104985599549464/detail/normal`,
             method:'post',
             data: data
         }).then((res) => {
@@ -46,6 +55,23 @@ class Home extends Component{
             method:'GET',
         }).then((res) => {
             console.log(res);
+        })
+    }
+    testDingDanList=()=>{
+        Super.super({
+            url:`api2/entity/104107815608326/list/tmpl`,
+            method:'GET',
+        }).then((res) => {
+            console.log(res);
+        })
+    }
+    testBaoGaoXiangQing=()=>{
+        Super.super({
+            url:`api2/entity/104985599549464/detail/107877167586484230`,
+            method:'GET',
+            //query:query
+        }).then((res) => {
+            console.log("报告详情:"+JSON.stringify(res));
         })
     }
     testDingDanXiangQing=()=>{
